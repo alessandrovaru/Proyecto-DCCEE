@@ -1,0 +1,63 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+    <h2>New User</h2>
+        {% if errors %}
+            {% include('partials/errors.twig') %}
+        {% endif %}
+
+        {% if result %}
+            <div class="alert alert-success">Guardado</div>
+        {% endif %}
+
+        <a class="btn btn-primary" href="{{'' | url}}">Go back</a>
+            <form method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="inputName">Nombre</label>
+                    <input class = "form-control" type="text" name="name" id="inputName">
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="inputLast_name">Apellido</label>
+                    <input class = "form-control" type="text" name="last_name" id="inputLast_name">
+                    <br>
+                </div>
+                <div class="form-group"><
+                    <label for="inputBirth_date">Fecha de nacimiento</label>
+                    <input class = "form-control" type="date" name="birth_date" id="inputBirth_date">
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="inputId_number">Cedula</label>
+                    <input class = "form-control" type="text" name="id_number" id="inputId_number">
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email</label>
+                    <input class = "form-control" type="text" name="email" id="inputEmail">
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input class = "form-control" type="password" name="password" id="inputPassword"><br>
+                </div>
+                <div class="form-group">
+                    <label for="inputArchivo">Foto de perfil</label>
+                    <input class = "form-control" type="file" name="archivo" id="inputArchivo">
+                    <br>
+                </div>
+                <div class="form-group">
+                  <input class="btn btn-primary" type="submit" value="Guardar">
+                </div>
+
+                </div>
+            </form>
+
+
+
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}

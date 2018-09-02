@@ -1,0 +1,29 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+
+
+      <h2>Login</h2>
+          {% if errors %}
+              {% include('partials/errors.twig') %}
+          {% endif %}
+
+          <a href="{{'auth/signup' | url}}">Registrarme</a>
+
+          <form method="post">
+            <div class="form-group">
+              <label for="inputEmail">Email</label>
+              <input class = "form-control" type="text" name="email" id="inputEmail">
+            </div>
+            <div class="form-group">
+              <label for="inputPassword">Password</label>
+              <input class = "form-control" type="password" name="password" id="inputPassword">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+
+
+{% endblock %}

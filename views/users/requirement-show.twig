@@ -1,0 +1,130 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+    <h2>Requisitos</h2>
+    <table style="width:100%" class="table-responsive table-bordered">
+            <tr>
+              <th>Id</th>
+              <th>Semestre</th>
+              <th>Cedula</th>
+              <th>Nombre</th>
+              <th>Cedula</th>
+              <th>Foto tipo carnet</th>
+              <th>Contancia de trabajo</th>
+              <th>Contancia de estudio</th>
+              <th>Certificacion de ingresos MAYOR</th>
+              <th>Certificacion de ingresos MENOR</th>
+              <th>Pensionados</th>
+              <th>Cesantes</th>
+              <th>Credito</th>
+              <th>Servicios</th>
+              <th>Poliza</th>
+              <th>Divorcio</th>
+              <th>Others</th>
+              <th>Discapacidades</th>
+              <th>Cerificado Linea</th>
+
+
+            </tr>
+     {% for req in requirements %}
+            <tr>
+                <td>{{req.id}}</td>
+                <td>{{req.semester_requirements}}</td>
+                <td>{{req.user.id_number}}</td>
+                <td>{{req.user.name}} {{req.user.last_name}}  </td>
+
+              {% if CEDULAExist %}
+                <td>Si existe<img src="../../files/{{req.semester_requirements}}/{{req.user.id}}/cedula {{req.user.id}}.jpg" width = '100px' /></td>
+              {% else %}
+                <td>No</td>
+              {% endif %}
+
+              {% if FTPExist %}
+                <td>Si existe<img src="../../files/{{req.semester_requirements}}/{{req.user.id}}/foto_tipo_carnet {{req.user.id}}.jpg" width = '100px' /></td>
+              {% else %}
+                <td>No</td>
+              {% endif %}
+
+              {% if CTExist %}
+                <td>Si existe<img src="../../files/{{req.semester_requirements}}/{{req.user.id}}/Constancia_de_trabajo {{req.user.id}}.pdf" width = '100px' alt="constanciaTrabajo" /></td>
+              {% else %}
+                <td>No</td>
+              {% endif %}
+
+              {% if CTEsExist %}
+                <td>Si existe<img src="../../files/{{req.semester_requirements}}/{{req.user.id}}/Constancia_de_estudio {{req.user.id}}.pdf" width = '100px' alt="Contancia estudios" /></td>
+              {% else %}
+                <td>No</td>
+              {% endif %}
+
+              {% if CIMAYExist %}
+                <td>Si existe<img src="../../files/{{req.semester_requirements}}/{{req.user.id}}/Certificacion_ingresos_mayores {{req.user.id}}.jpg" width = '100px' /></td>
+              {% else %}
+                <td>No</td>
+              {% endif %}
+
+              {% if CIMENExist %}
+                <td>Si existe<img src="../../files/{{req.semester_requirements}}/{{req.user.id}}/Certificacion_ingresos_menores {{req.user.id}}.jpg" width = '100px' /></td>
+              {% else %}
+                <td>No</td>
+              {% endif %}
+
+              {% if PENSIONADOSExist %}
+                <td>Si existe<img src="../../files/{{req.semester_requirements}}/{{req.user.id}}/pensionados {{req.user.id}}.jpg" width = '100px' /></td>
+              {% else %}
+                <td>No</td>
+              {% endif %}
+
+              {% if CESANTESExist %}
+                <td>Si existe<img src="../../files/{{req.semester_requirements}}/{{req.user.id}}/cesantes {{req.user.id}}.jpg" width = '100px' /></td>
+              {% else %}
+                <td>No</td>
+              {% endif %}
+
+              {% if CREDITOSExist %}
+                <td>Si existe<img src="../../files/{{req.semester_requirements}}/{{req.user.id}}/credito {{req.user.id}}.jpg" width = '100px' /></td>
+              {% else %}
+                <td>No</td>
+              {% endif %}
+
+              {% if SERVICIOSExist %}
+                <td>Si existe<img src="../../files/{{req.semester_requirements}}/{{req.user.id}}/servicios {{req.user.id}}.jpg" width = '100px' /></td>
+              {% else %}
+                <td>No</td>
+              {% endif %}
+
+              {% if POLIZAxist %}
+                <td>Si existe<img src="../../files/{{req.semester_requirements}}/{{req.user.id}}/poliza {{req.user.id}}.jpg" width = '100px' /></td>
+              {% else %}
+                <td>No</td>
+              {% endif %}
+
+              {% if DIVORCIOExist %}
+                <td>Si existe<img src="../../files/{{req.semester_requirements}}/{{req.user.id}}/divorcio {{req.user.id}}.jpg" width = '100px' /></td>
+              {% else %}
+                <td>No</td>
+              {% endif %}
+
+              {% if OTHERExist %}
+                <td>Si existe<img src="../../files/{{req.semester_requirements}}/{{req.user.id}}/others {{req.user.id}}.jpg" width = '100px' /></td>
+              {% else %}
+                <td>No</td>
+              {% endif %}
+
+              {% if DISCAPACIDADESxist %}
+                <td>Si existe<img src="../../files/{{req.semester_requirements}}/{{req.user.id}}/discapacidades {{req.user.id}}.jpg" width = '100px' /></td>
+              {% else %}
+                <td>No</td>
+              {% endif %}
+
+              {% if CLExist %}
+                <td>Si existe<img src="../../files/{{req.semester_requirements}}/{{req.user.id}}/certificadoLinea {{req.user.id}}.jpg" width = '100px' alt="certificadoLinea" /></td>
+              {% else %}
+                <td>No</td>
+              {% endif %}
+
+
+            </tr>
+     {% endfor %}
+     </table>
+{% endblock %}

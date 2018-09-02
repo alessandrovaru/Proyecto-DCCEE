@@ -1,0 +1,24 @@
+{% extends "layout.twig" %}
+
+
+{% block content %}
+    <table style="width:100%">
+            <tr>
+                <th>Id</th>
+                <th>Semestre</th>
+                <th>Cedula</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+            </tr>
+     {% for req in requirements %}
+            <tr>
+                <td>{{req.id}}</td>
+                <td>{{req.semester_requirements}}</td>
+                <td>{{req.user.name}} {{req.user.id}} </td>
+                <td>{{req.user.last_name}}</td>
+                <td>{{req.user.id_number}}</td>
+                <td><img src="../files/{{req.semester_requirements}}/{{req.user.id}}/cedula {{req.user.id}}.jpg" width = '100px' /></td>
+            </tr>
+     {% endfor %}
+     </table>
+{% endblock %}

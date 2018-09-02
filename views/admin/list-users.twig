@@ -1,0 +1,29 @@
+{% extends "layout.twig" %}
+
+
+{% block content %}
+    <table style="width:100%">
+            <tr>
+              <th>foto</th>
+                <th>Name</th>
+                <th>Lastname</th>
+                <th>email</th>
+                <th>Fecha de nacimiento</th>
+                <th>cedula</th>
+                <th>carrera</th>
+                <th>tipo de usuario</th>
+            </tr>
+     {% for user in users %}
+            <tr>
+                <td><img src="../files/{{user.id}}/foto_de_perfil {{user.id}}.jpg" width = '100px' /></td>
+                <td><a href="../users/show/{{user.id}}">{{user.name}}</a></td>
+                <td>{{user.last_name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.birth_date}}</td>
+                <td>{{user.id_number}}</td>
+                <td>{{user.carrer}}</td>
+                <td>{{user.type_user}}</td>
+            </tr>
+     {% endfor %}
+     </table>
+{% endblock %}

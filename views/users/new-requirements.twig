@@ -1,0 +1,133 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+  <form method="post" enctype="multipart/form-data">
+
+    <h1>Requisitos</h1>
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect1"><strong>Elegir semestre</strong></label>
+      <select class="form-control" name="semester" id="exampleFormControlSelect1">
+        <option>Septiembre-Enero 2018</option>
+        <option>Febrero-Julio 2019</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+        <label for="inputFoto_tipo_carnet"><strong>Foto tipo carnet</strong></label>
+        <input class = "form-control" type="file" name="foto_tipo_carnet" id="inputFoto_tipo_carnet">
+        <br>
+    </div>
+
+    <div class="form-group">
+        <label for="inputCedula"><strong>Fotocopia de la cedula</strong></label>
+        <input class = "form-control" type="file" name="cedula" id="inputCedula">
+        <br>
+    </div>
+
+    <div class="form-group">
+      <h2>Carta explicativa</h2>
+        <label for="inputArchivo">Redactar carta explicando el motivo de la ayuda economica</label>
+          <div class="form-group">
+            <input class = "form-control" type="text" name="asunto" id="inputArchivo" placeholder="Asunto">
+          </div>
+          <div class="form-group">
+            <textarea class = "form-control" name="carta_explicativa" rows="8" cols="80" placeholder="Descripcion"></textarea>
+          </div>
+        <br>
+    </div>
+<hr>
+    <div class="form-group">
+      <label for="constanciaTrabajo">Constancia de trabajo</label>
+      <input class="form-control "type="file" name="constanciaTrabajo" id="constanciaTrabajo">
+    </div>
+<hr>
+    <div class="form-group">
+      <label for="constanciaEstudios">Constancia de estudios</label>
+      <input class="form-control "type="file" name="constanciaEstudios" id="constanciaEstudios">
+    </div>
+<hr>
+    <div class="form-group">
+      <h2>Trabajador por cuenta propia con ingresos mayores al sueldo minimo</h2>
+        <label for="certificacionIngresosMay">Certificacion de ingresos mayores al sueldo minimo</label>
+        <input class="form-control "type="file" name="certificacionIngresosMay" id="certificacionIngresosMay">
+    </div>
+
+    <div class="form-group">
+      <h2>Trabajador por cuenta propia con ingresos menores al sueldo minimo</h2>
+        <label for="asunto_ingresos">Carta explicativa</label>
+          <div class="form-group">
+            <input class = "form-control" type="text" name="asunto_ingresos" id="asunto_ingresos" placeholder="Asunto">
+          </div>
+          <div class="form-group">
+            <textarea class = "form-control" name="carta_explicativa_ingresos" rows="8" cols="80" placeholder="Descripcion"></textarea>
+          </div>
+        <br>
+          <label for="certificacionIngresosMen"><strong>Estados de cuenta</strong></label>
+          <input class="form-control" type="file" name="certificacionIngresosMen" id="certificacionIngresosMen">
+    </div>
+<hr>
+    <div class="form-group">
+      <h2>Pensionados</h2>
+      <label for="pensionados"><strong>Constancia electronica emitida por el IVSS</strong></label>
+      <input class="form-control" type="file" name="pensionados" id="pensionados">
+    </div>
+
+    <div class="form-group">
+      <h2>Cesantes</h2>
+      <label for="cesantes"><strong>Constancia de liquidacion  o despido</strong></label>
+      <input class="form-control" type="file" name="cesantes" id="cesantes">
+    </div>
+<hr>
+    <div class="form-group">
+      <h2>Creditos, alquileres o hipotecas</h2>
+      <label for="creditos"><strong>Copia de credito, pago de alquiler o hipoteca</strong></label>
+      <input class="form-control" type="file" name="creditos" id="creditos">
+    </div>
+
+    <div class="form-group">
+      <h2>Servicios basicos</h2>
+      <label for="servicios"><strong>Comprobantes electronicos o recibos de todos los servicios basicos</strong></label>
+      <input class="form-control" type="file" name="servicios" id="servicios">
+    </div>
+
+    <div class="form-group">
+      <h2>Polizas de seguro</h2>
+      <label for="poliza"><strong>Comprobantes de polizas</strong></label>
+      <input class="form-control" type="file" name="poliza" id="poliza">
+    </div>
+<hr>
+    <div class="form-group">
+      <h2>Divorciados</h2>
+      <label for="divorcio"><strong>Copia del acta de divorcio</strong></label>
+      <input class="form-control" type="file" name="divorcio" id="divorcio">
+    </div>
+
+    <div class="form-group">
+      <h2>Acta de defuncion, informe medico, transporte escolar, etc...</h2>
+      <label for="others"><strong>Acta de defuncion, informe medico, transporte escolar, etc...</strong></label>
+      <input class="form-control" type="file" name="others" id="others">
+    </div>
+
+    <div class="form-group">
+      <h2>Discapacidades</h2>
+      <label for="discapacidades"><strong>Copias emitidas por el CONAPDIS</strong></label>
+      <input class="form-control" type="file" name="discapacidades" id="discapacidades">
+    </div>
+
+    <div class="form-group">
+      <h2>Conductores de taxis o busetas</h2>
+      <label for="certificadoLinea"><strong>Contsancia de inscripcion en la linea</strong></label>
+      <input class="form-control" type="file" name="certificadoLinea" id="certificadoLinea">
+    </div>
+
+
+      <div class="form-group">
+        <input class = "btn btn-primary" type="submit"  value="Guardar">
+      </div>
+  </form>
+
+
+
+{% endblock %}

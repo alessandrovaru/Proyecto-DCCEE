@@ -1,0 +1,36 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+<div class="row">
+  <div class="col-md-6">
+    <h2>Datos personales</h2>
+    <ul>
+      {% for user in userP %}
+       <li><strong>Nombre: </strong>{{user.name}}</li>
+       <li><strong>Apellido: </strong>{{user.last_name}}</li>
+       <li><strong>Cedula: </strong>{{user.id_number}}</li>
+       <li><strong>Fechas de nacimiento: </strong>{{user.birth_date}}</li>
+       <li><strong>Correo: </strong>{{user.email}}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h2>Requisitos</h2>
+    <table>
+      <thead>
+        <th>Semestre</th>
+      </thead>
+      <tbody>
+        {% for req in requirements %}
+          <td><a href="../requirements/{{req.id}}">{{req.semester_requirements}}</a></td>
+        {% endfor %}
+      </tbody>
+    </table>
+
+
+  </div>
+</div>
+
+
+{% endblock %}

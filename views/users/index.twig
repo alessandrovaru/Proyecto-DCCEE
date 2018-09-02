@@ -1,0 +1,16 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+     <p>Welcome {{user.email}}!</p>
+      {% if requisitos_usuario  %}
+        <p>Hasta ahora usted ha subido los requerimientos del semestre {{requisitos_usuario}}</p>
+        {% else %}
+        <p>Usted aun no ha subido nada</p>
+      {% endif %}
+    <a href="{{'users/new-requirements' | url}}">Subir Archivos</a> <br>
+
+
+     <a href="{{'auth/logout' | url}}">Logout</a>
+
+{% endblock %}

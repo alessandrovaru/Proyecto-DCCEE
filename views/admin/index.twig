@@ -1,0 +1,23 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+
+
+
+
+    <ul>
+      <li>
+        <a href="{{'admin/list_user' | url}}">Lista de usuarios</a>
+      </li>
+      <li>
+        <a href="{{'admin/list_requirements' | url}}">Lista de requerimientos</a>
+      </li>
+      <li>
+        <a href="{{'admin/create_user' | url}}">Crear usuario</a>
+      </li>
+      <li>
+        <a href="{{'auth/logout' | url}}">Logout</a>
+      </li>
+    </ul>
+
+{% endblock %}
