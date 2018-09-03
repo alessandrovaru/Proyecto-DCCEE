@@ -17,6 +17,9 @@ $dotenv->load();
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
+use Illuminate\Database\Connectors;
+
+
 $capsule = new Capsule;
 
 $capsule->addConnection([
