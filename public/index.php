@@ -23,7 +23,7 @@ use Illuminate\Database\Connectors;
 $capsule = new Capsule;
 
 $capsule->addConnection([
-    'driver'    => getenv('DB_DRIVER'),
+    'driver'    => 'pgsql',
     'host'      => getenv('DB_HOST'),
     'database'  => getenv('DB_NAME'),
     'username'  => getenv('DB_USER'),
