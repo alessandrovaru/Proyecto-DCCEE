@@ -12,7 +12,8 @@ $baseURL= 'http://' . $_SERVER['HTTP_HOST'] . $baseDir;
 define('BASE_URL',$baseURL);
 
 //CONECTAR BASE DE DATOS
-
+$dotenv = new \Dotenv\Dotenv(__DIR__ . '/..');
+$dotenv->load();
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
