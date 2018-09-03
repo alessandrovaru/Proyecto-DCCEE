@@ -4,7 +4,7 @@
 
      <p>Welcome {{user.email}}!</p>
       {% if requisitos_usuario  %}
-        <p>Hasta ahora usted ha subido los requerimientos del semestre {{requisitos_usuario}}</p>
+        <p>Hasta ahora usted ha subido los requerimientos del semestre {{requisitos_usuario}} <a href="../users/update/{{requisitos_id}}">editar</a></p>
         {% else %}
         <p>Usted aun no ha subido nada</p>
       {% endif %}
