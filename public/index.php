@@ -37,34 +37,7 @@ $capsule->setAsGlobal();
 $capsule->bootEloquent();
 
 
-// cracion de usuario administrador
 
-use App\Models\User;
-use App\Models\Roleuser;
-
-$newUserAdmin = User::firstOrNew(['email' => 'admin@admin.com'],
-    ['name' => 'Admin',
-    'last_name' => 'Admin',
-    'password' => password_hash('admin', PASSWORD_DEFAULT)]);
-
-$newUserAdmin->save();
-
-//CREACION AUTOMATICA DE ROLES
-use App\Models\Role;
-
-$newAdmin = Role::firstOrNew(['role' => 'Admin']);
-$newNormal = Role::firstOrNew(['role' => 'Normal']);
-
-$newAdmin->save();
-$newNormal->save();
-
-
-
-$newRoleUser = Roleuser::firstOrNew(
-    ['user_id' => $newUserAdmin->id],
-    ['role_id' => '1']);
-
-$newRoleUser->save();
 
 //RUTAS
 use Phroute\Phroute\RouteCollector;
@@ -98,3 +71,33 @@ $router->group(['before' => 'auth'], function($router){
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $route);
 echo $response;
+
+
+// cracion de usuario administrador
+
+use App\Models\User;
+use App\Models\Roleuser;
+
+$newUserAdmin = User::firstOrNew(['email' => 'admin@admin.com'],
+    ['name' => 'Admin',
+    'last_name' => 'Admin',
+    'password' => password_hash('admin', PASSWORD_DEFAULT)]);
+
+$newUserAdmin->save();
+
+//CREACION AUTOMATICA DE ROLES
+use App\Models\Role;
+
+$newAdmin = Role::firstOrNew(['role' => 'Admin']);
+$newNormal = Role::firstOrNew(['role' => 'Normal']);
+
+$newAdmin->save();
+$newNormal->save();
+
+
+
+$newRoleUser = Roleuser::firstOrNew(
+    ['user_id' => $newUserAdmin->id],
+    ['role_id' => '1']);
+
+$newRoleUser->save();
