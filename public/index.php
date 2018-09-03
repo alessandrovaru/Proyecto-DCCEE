@@ -36,14 +36,6 @@ $capsule->addConnection([
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
 
-//CREACION AUTOMATICA DE ROLES
-use App\Models\Role;
-
-$newAdmin = Role::firstOrNew(['role' => 'Admin']);
-$newNormal = Role::firstOrNew(['role' => 'Normal']);
-
-$newAdmin->save();
-$newNormal->save();
 
 // cracion de usuario administrador
 
@@ -56,6 +48,17 @@ $newUserAdmin = User::firstOrNew(['email' => 'admin@admin.com'],
     'password' => password_hash('admin', PASSWORD_DEFAULT)]);
 
 $newUserAdmin->save();
+
+//CREACION AUTOMATICA DE ROLES
+use App\Models\Role;
+
+$newAdmin = Role::firstOrNew(['role' => 'Admin']);
+$newNormal = Role::firstOrNew(['role' => 'Normal']);
+
+$newAdmin->save();
+$newNormal->save();
+
+
 
 $newRoleUser = Roleuser::firstOrNew(
     ['user_id' => $newUserAdmin->id],
@@ -77,17 +80,15 @@ $router->filter('auth', function(){
     }
 });
 
-
-
 //Login
 $router->controller('/auth', App\Controllers\AuthController::class);
 
 //no deja ir a estas rutas a menos que no hayas iniciado sesion
 $router->group(['before' => 'auth'], function($router){
     $router->controller('/', App\Controllers\IndexController::class);
-    //if($_SESSION['role'] == 'Admin'){
+    if($_SESSION['role'] == 'Admin'){
         $router->controller('/admin', App\Controllers\Admin\AdminController::class);
-    //}
+    }
     $router->controller('/users', App\Controllers\UserController::class);
 });
 
