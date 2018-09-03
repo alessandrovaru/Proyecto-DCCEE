@@ -85,9 +85,9 @@ $router->controller('/auth', App\Controllers\AuthController::class);
 //no deja ir a estas rutas a menos que no hayas iniciado sesion
 $router->group(['before' => 'auth'], function($router){
     $router->controller('/', App\Controllers\IndexController::class);
-    if($_SESSION['role'] == 'Admin'){
+    //if($_SESSION['role'] == 'Admin'){
         $router->controller('/admin', App\Controllers\Admin\AdminController::class);
-    }
+    //}
     $router->controller('/users', App\Controllers\UserController::class);
 });
 
