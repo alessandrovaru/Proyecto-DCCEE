@@ -14,8 +14,6 @@ class IndexController extends BaseController {
             $userId = $_SESSION['userId'];
             $user = User::find($userId);
             if($user){
-
-              
                 return $this->render('index.twig', ['user' => $user]);
             }
         }
