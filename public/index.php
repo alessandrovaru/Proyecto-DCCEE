@@ -24,10 +24,11 @@ $capsule = new Capsule;
 
 $capsule->addConnection([
     'driver'    => 'pgsql',
-    'host'      => getenv('DB_HOST'),
-    'database'  => getenv('DB_NAME'),
-    'username'  => getenv('DB_USER'),
-    'password'  => getenv('DB_PASS'),
+    'host'      => ec2-54-225-92-1.compute-1.amazonaws.com,
+    'database'  => d2cfsit453o1kj,
+    'username'  => mpyevgppabkxvg,
+    'password'  => 3f43b47371a72d2b5673fcb717eafa5f5c7f482454dff9d6a5b4e181d7524df9,
+    'port'  	=> 5432,
     'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix'    => '',
