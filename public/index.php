@@ -23,7 +23,7 @@ $capsule = new Capsule;
 
 $capsule->addConnection([
     'driver'    => getenv('DB_DRIVER'),
-    'host'      => getenv('DB_HOST'),
+    'host'      => 'pgsql',
     'database'  => getenv('DB_NAME'),
     'username'  => getenv('DB_USER'),
     'port'      => getenv('DB_PORT'),
