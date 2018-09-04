@@ -23,6 +23,7 @@ use Illuminate\Database\Connectors;
 $capsule = new Capsule;
 
 $capsule->addConnection([
+    'url'       => 'postgres://mpyevgppabkxvg:3f43b47371a72d2b5673fcb717eafa5f5c7f482454dff9d6a5b4e181d7524df9@ec2-54-225-92-1.compute-1.amazonaws.com:5432/d2cfsit453o1kj',
     'driver'    => 'pgsql',
     'host'      => 'ec2-54-225-92-1.compute-1.amazonaws.com',
     'database'  => 'd2cfsit453o1kj',
